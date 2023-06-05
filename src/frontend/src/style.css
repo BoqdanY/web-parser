@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  height: 30px;
+  width: 500px;
+  padding: 0 1%;
+  border: 3px solid bisque;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  height: 30px;
+  width: 100px;
+  border: 3px solid bisque;
+  background-color: beige;
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: bisque;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
