@@ -7,9 +7,20 @@ const Form = () => {
     setFormData(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
+  const handleSubmit = async () => {
+    console.log('Url for parse: ', formData);
+    try {
+      const request = await fetch('http://localhost:3001/parse', {
+        method: 'GET',
+        headers: {
+          'UrlForParse': formData
+        }
+      });
+      const data = await request.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
     setFormData('');
   };
 
