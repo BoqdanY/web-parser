@@ -4,6 +4,7 @@ export const runRouter = (request, response) => {
   for (const route of routes) {
     if (request.url === route.url) {
       route.callback(request, response);
+      return;
     }
   }
   response.writeHead(404);

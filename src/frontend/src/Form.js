@@ -7,13 +7,14 @@ const Form = () => {
     setFormData(e.target.value);
   };
 
-  const handleSubmit = async () => {
-    console.log('Url for parse: ', formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // console.log('Url for parse: ', formData);
     try {
-      const request = await fetch('http://localhost:3001/parse', {
+      const request = await fetch('/parse', {
         method: 'GET',
         headers: {
-          'UrlForParse': formData
+          'Parseurl': formData,
         }
       });
       const data = await request.json();
