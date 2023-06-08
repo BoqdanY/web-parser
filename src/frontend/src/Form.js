@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = () => {
+const Form = ({ setCode }) => {
   const [formData, setFormData] = useState('');
 
   const handleChange = (e) => {
@@ -9,7 +9,6 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log('Url for parse: ', formData);
     try {
       const request = await fetch('/parse', {
         method: 'GET',
@@ -18,7 +17,7 @@ const Form = () => {
         }
       });
       const data = await request.json();
-      console.log(data);
+      setCode(data.data)
     } catch (err) {
       console.log(err);
     }

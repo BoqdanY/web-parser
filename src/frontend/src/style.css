@@ -38,3 +38,18 @@ button {
   padding: 10px 0;
   margin-bottom: 20px;
 }
+
+.code-display {
+  max-height: 800px;
+  overflow: auto;
+}
+
+pre {
+  margin: 0;
+}
+
+code {
+  display: block;
+  padding: 1em;
+  background-color: #f5f5f5;
+}

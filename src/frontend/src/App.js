@@ -1,13 +1,16 @@
 import Header from "./Header";
 import Form from "./Form";
+import CodeDisplay from "./CodeDisplay";
+import { useState } from "react";
 
 const App = () => {
+  const [code, setCode] = useState('your page will be here')
   return (
     <>
       <Header />
       <div className="container">
-        <div>Work...</div>
-        <Form />
+        <Form setCode={setCode}/>
+        <CodeDisplay code={code}/>
       </div>
     </>
   );
