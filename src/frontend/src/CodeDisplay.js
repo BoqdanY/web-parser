@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
+import 'prismjs/themes/prism-tomorrow.css';
 
 const CodeDisplay = ({ code }) => {
   useEffect(() => {
@@ -9,7 +9,7 @@ const CodeDisplay = ({ code }) => {
 
   return (
     <div className="code-display">
-      <pre className='some'>
+      <pre>
         <code className="language-html">{code}</code>
       </pre>
     </div>
