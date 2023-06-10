@@ -9,7 +9,7 @@ const CodeDisplay = ({ code }) => {
 
   return (
     <div className="code-display">
-      <pre>
+      <pre className='some'>
         <code className="language-html">{code}</code>
       </pre>
     </div>
