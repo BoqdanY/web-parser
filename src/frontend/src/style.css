@@ -74,3 +74,10 @@ pre::-webkit-scrollbar-corner {
   border-radius: 10px;
 }
 
+.copy {
+  width: 70px;
+}
+
+.disabled {
+  display: none;
+}
