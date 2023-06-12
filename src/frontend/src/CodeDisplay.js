@@ -17,7 +17,7 @@ const CodeDisplay = ({ code, setCode }) => {
   const [copy, setCopy] = useState('Copy');
 
   useEffect(() => {
-    code === 'your page will be here' ? setDisabled('disabled') : setDisabled('');
+    code === 'your page will be here' || code === 'Loading...' ? setDisabled('disabled') : setDisabled('');
     Prism.highlightAll();
   }, [code]);
 

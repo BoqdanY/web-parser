@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 const Form = ({ setCode }) => {
-  const [formData, setFormData] = useState('');
-
   const handleChange = (e) => {
     setFormData(e.target.value);
   };
@@ -18,17 +16,19 @@ const Form = ({ setCode }) => {
         }
       });
       const data = await request.json();
-      setCode(data.data)
+      setCode(data.data);
     } catch (err) {
       console.log(err);
     }
     setFormData('');
   };
 
+  const [formData, setFormData] = useState('');
+
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" name="name" value={formData} onChange={handleChange} placeholder='http://' />
-      <button type="submit">Submit</button>
+      <button type="submit">Get Page Html</button>
     </form>
   );
 };
