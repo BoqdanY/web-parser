@@ -9,14 +9,19 @@ const Form = ({ setCode }) => {
     e.preventDefault();
     setCode('Loading...');
     try {
-      const request = await fetch('/parse', {
+      const response = await fetch('/parse', {
         method: 'GET',
         headers: {
           'Parseurl': formData,
         }
       });
-      const data = await request.json();
-      setCode(data.data);
+      const data = await response.json();
+      if (response.ok) {
+        console.log('here');
+        setCode(data.data);
+      } else {
+        setCode(data.err);
+      }
     } catch (err) {
       console.log(err);
     }
