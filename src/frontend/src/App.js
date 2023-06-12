@@ -10,7 +10,7 @@ const App = () => {
       <Header />
       <div className="container">
         <Form setCode={setCode}/>
-        <CodeDisplay code={code}/>
+        <CodeDisplay code={code} setCode={setCode}/>
       </div>
     </>
   );

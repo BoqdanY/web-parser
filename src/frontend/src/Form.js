@@ -9,6 +9,7 @@ const Form = ({ setCode }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setCode('Loading...');
     try {
       const request = await fetch('/parse', {
         method: 'GET',

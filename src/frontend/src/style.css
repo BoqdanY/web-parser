@@ -75,6 +75,13 @@ pre::-webkit-scrollbar-corner {
 }
 
 .copy {
+  margin-top: 10px;
+  width: 70px;
+}
+
+.clear {
+  margin-top: 10px;
+  margin-left: 20px;
   width: 70px;
 }
 
