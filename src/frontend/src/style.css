@@ -9,6 +9,14 @@ body {
   color: #e0e1dd;
 }
 
+h1 {
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
 input {
   background-color: #415a77;
   height: 30px;
@@ -112,4 +120,23 @@ pre::-webkit-scrollbar-corner {
 
 .link:hover {
   color: #fff;
+}
+
+.info-span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.eg-span {
+  font-weight: 600;
+  color: #f3f3f3;
+}
+
+ul {
+  margin-top: 7px;
+  margin-left: 40px;
+}
+
+ul li {
+  margin-bottom: 7px;
 }
