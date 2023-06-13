@@ -105,11 +105,11 @@ pre::-webkit-scrollbar-corner {
   display: none;
 }
 
-.nav-a {
+.link {
   color: #e0e1dd;
   margin-left: 10px;
 }
 
-.nav-a:hover {
+.link:hover {
   color: #fff;
 }

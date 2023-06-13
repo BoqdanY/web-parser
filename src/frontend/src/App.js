@@ -8,17 +8,15 @@ import InfoPage from './InfoPage';
 const App = () => {
   const [code, setCode] = useState('your page will be here')
   return (
-    <>
+    <Router>
       <Header />
       <div className="container">
-        <Router>
-          <Routes>
-            <Route path="/" element={<MainPage setCode={setCode} code={code} />} />
-            <Route path="/info" element={<InfoPage />} />
-          </Routes>
-        </Router>  
+        <Routes>
+          <Route path="/" element={<MainPage setCode={setCode} code={code} />} />
+          <Route path="/info" element={<InfoPage />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 };
 
