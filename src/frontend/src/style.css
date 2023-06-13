@@ -49,6 +49,12 @@ button:hover {
   padding: 0 10px;
 }
 
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header {
   background-color: #0d1b2a;
   padding: 10px 0;
@@ -97,4 +103,13 @@ pre::-webkit-scrollbar-corner {
 
 .disabled {
   display: none;
+}
+
+.nav-a {
+  color: #e0e1dd;
+  margin-left: 10px;
+}
+
+.nav-a:hover {
+  color: #fff;
 }

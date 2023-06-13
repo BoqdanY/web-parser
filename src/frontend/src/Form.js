@@ -16,13 +16,12 @@ const Form = ({ setCode }) => {
         }
       });
       const data = await response.json();
-      if (response.ok) {
-        console.log('here');
-        setCode(data.data);
-      } else {
-        setCode(data.err);
-      }
+      if (response.ok) setCode(data.data);
+      else setCode(data.err);
     } catch (err) {
+      if (err instanceof TypeError) {
+        setCode(err.name);
+      }
       console.log(err);
     }
     setFormData('');
