@@ -7,6 +7,10 @@ const Form = ({ setCode }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData) {
+      setCode('Paste url here');
+      return;
+    }
     setCode('Loading...');
     try {
       const response = await fetch('/parse', {
