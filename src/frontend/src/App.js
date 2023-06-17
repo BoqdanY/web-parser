@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <div className="container">
+      <div className="container mb-30">
         <Routes>
           <Route path="/" element={<MainPage setCode={setCode} code={code} />} />
           <Route path="/info" element={<InfoPage />} />
