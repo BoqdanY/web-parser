@@ -10,8 +10,6 @@ const Header = () => {
         <div>
           <Link to="/" className="link">Home</Link>
           <Link to="/info" className="link">Info</Link>
-          {/* <a href='/info' className="nav-a">Info</a> */}
-          {/* <a href='/' className="nav-a">Home</a> */}
         </div>
       </div>
     </div>

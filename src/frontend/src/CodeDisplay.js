@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
+import formState from './form-state';
 
 const CodeDisplay = ({ code, setCode }) => {
   const copyCode = () => {
@@ -10,14 +11,20 @@ const CodeDisplay = ({ code, setCode }) => {
   }
   
   const clearCode = () => {
-    setCode('your page will be here');
+    setCode(formState.default);
   }
 
   const [disabled, setDisabled] = useState('disabled');
   const [copy, setCopy] = useState('Copy');
 
   useEffect(() => {
-    code === 'your page will be here' || code === 'Loading...' ? setDisabled('disabled') : setDisabled('');
+    for (const state of Object.values(formState)) {
+      if (code === state) {
+        setDisabled('disabled');
+        break;
+      } else setDisabled('');
+    }
+
     Prism.highlightAll();
   }, [code]);
 

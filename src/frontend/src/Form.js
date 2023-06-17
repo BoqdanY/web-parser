@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import formState from './form-state';
 
 const Form = ({ setCode }) => {
   const handleChange = (e) => {
@@ -8,10 +9,10 @@ const Form = ({ setCode }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData) {
-      setCode('Paste url here');
+      setCode(formState.errEmpty);
       return;
     }
-    setCode('Loading...');
+    setCode(formState.loading);
     try {
       const response = await fetch('/parse', {
         method: 'GET',

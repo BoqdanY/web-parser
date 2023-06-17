@@ -4,9 +4,10 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Header from './Header';
 import MainPage from './MainPage';
 import InfoPage from './InfoPage';
+import formState from './form-state';
 
 const App = () => {
-  const [code, setCode] = useState('your page will be here')
+  const [code, setCode] = useState(formState.default);
   return (
     <Router>
       <Header />
