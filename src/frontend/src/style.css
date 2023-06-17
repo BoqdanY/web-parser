@@ -17,6 +17,10 @@ h2 {
   margin-bottom: 10px;
 }
 
+h3 {
+  font-weight: 600;
+}
+
 input[type="text"] {
   background-color: #415a77;
   height: 30px;
@@ -140,4 +144,18 @@ ul {
 
 ul li {
   margin-bottom: 7px;
+}
+
+.radio-container {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+.radio-child {
+  margin-bottom: 10px;
+}
+
+.radio-child input {
+  margin-right: 10px;
 }

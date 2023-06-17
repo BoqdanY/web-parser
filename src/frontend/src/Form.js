@@ -32,26 +32,32 @@ const Form = ({ setCode }) => {
     setFormData('');
   };
 
+  const handleRadioChange = (e) => {
+    setParsingType(e.target.value);
+  }
+
   const [formData, setFormData] = useState('');
+  const [parsingType, setParsingType] = useState('');
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Choose type of parsing</h3>
       <div className='radio-container'>
-        <div>
-          <input type="radio" id="contactChoice1" name="contact" value="email" />
-          <label for="contactChoice1">Get HTML</label>
+        <div className='radio-child'>
+          <input type="radio" id="parsingChoise1" name="parsing" value="gHTML" onChange={handleRadioChange} checked={parsingType === 'gHTML'} />
+          <label htmlFor="parsingChoise1">Get HTML only</label>
         </div>
-        <div>
-          <input type="radio" id="contactChoice2" name="contact" value="phone" />
-          <label for="contactChoice2">Static</label>
+        <div className='radio-child'>
+          <input type="radio" id="parsingChoise2" name="parsing" value="static" onChange={handleRadioChange} checked={parsingType === 'static'} />
+          <label htmlFor="parsingChoise2">Get data from static page</label>
         </div>
-        <div>
-          <input type="radio" id="contactChoice3" name="contact" value="mail" />
-          <label for="contactChoice3">Dynamic by getting page</label>
+        <div className='radio-child'>
+          <input type="radio" id="parsingChoise3" name="parsing" value="dynamicPages" onChange={handleRadioChange} checked={parsingType === 'dynamicPages'} />
+          <label htmlFor="parsingChoise3">Get data from dynamic page <span className="eg-span">(getting page)</span></label>
         </div>
-        <div>
-          <input type="radio" id="contactChoice3" name="contact" value="mail" />
-          <label for="contactChoice3">Dynamic by getting data</label>
+        <div className='radio-child'>
+          <input type="radio" id="parsingChoise4" name="parsing" value="dynamicData" onChange={handleRadioChange} checked={parsingType === 'dynamicData'} />
+          <label htmlFor="parsingChoise4">Get data from dynamic page <span className="eg-span">(getting data)</span></label>
         </div>
       </div>
 
