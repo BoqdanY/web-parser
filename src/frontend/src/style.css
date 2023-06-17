@@ -17,7 +17,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-input {
+input[type="text"] {
   background-color: #415a77;
   height: 30px;
   color: #e0e1dd;
@@ -28,11 +28,11 @@ input {
   margin-right: 10px;
 }
 
-input::placeholder {
+input[type="text"]::placeholder {
   color: #e0e1dd;
 }
 
-input:focus {
+input[type="text"]:focus {
   outline: none;
 }
 

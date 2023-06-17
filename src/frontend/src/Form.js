@@ -36,6 +36,25 @@ const Form = ({ setCode }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className='radio-container'>
+        <div>
+          <input type="radio" id="contactChoice1" name="contact" value="email" />
+          <label for="contactChoice1">Get HTML</label>
+        </div>
+        <div>
+          <input type="radio" id="contactChoice2" name="contact" value="phone" />
+          <label for="contactChoice2">Static</label>
+        </div>
+        <div>
+          <input type="radio" id="contactChoice3" name="contact" value="mail" />
+          <label for="contactChoice3">Dynamic by getting page</label>
+        </div>
+        <div>
+          <input type="radio" id="contactChoice3" name="contact" value="mail" />
+          <label for="contactChoice3">Dynamic by getting data</label>
+        </div>
+      </div>
+
       <input type="text" name="name" value={formData} onChange={handleChange} placeholder='http://' />
       <button type="submit">Get Page Html</button>
     </form>
