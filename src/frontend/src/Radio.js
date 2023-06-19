@@ -4,6 +4,7 @@ import { useState } from "react";
 const fieldsState = {
   gHTML: ['url'],
   static: ['url', 'element'],
+  dynamicPages: ['url', 'element', 'from', 'to']
 };
 
 const Radio = ({ fields, setFields }) => {

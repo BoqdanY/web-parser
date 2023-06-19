@@ -11,7 +11,9 @@ const Form = ({ setCode }) => {
 
   const [fields, setFields] = useState({
     url: '',
-    element: 'disabled'
+    element: 'disabled',
+    from: 'disabled',
+    to: 'disabled'
   });
 
   const handleSubmit = async (e) => {
