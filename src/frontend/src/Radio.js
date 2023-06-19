@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 const fieldsState = {
   gHTML: ['url'],
@@ -8,9 +7,7 @@ const fieldsState = {
   dynamicData: ['url', 'element', 'from', 'to', 'requestData']
 };
 
-const Radio = ({ fields, setFields }) => {
-  const [parsingType, setParsingType] = useState('');
-
+const Radio = ({ fields, setFields, parsingType, setParsingType }) => {
   const handleRadioChange = (e) => {
     setParsingType(e.target.value);
     const newFields = {};

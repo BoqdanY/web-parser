@@ -17,6 +17,8 @@ const Form = ({ setCode }) => {
     requestData: 'disabled'
   });
 
+  const [parsingType, setParsingType] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData) {
@@ -45,7 +47,7 @@ const Form = ({ setCode }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Radio fields={fields} setFields={setFields} />
+      <Radio fields={fields} setFields={setFields} parsingType={parsingType} setParsingType={setParsingType} />
       <Fill formData={formData} setFormData={setFormData} fields={fields} />
     </form>
   );
