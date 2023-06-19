@@ -2,7 +2,10 @@ import React from "react";
 
 const Fill = ({ formData, setFormData, fields }) => {
   const handleChange = (e) => {
-    setFormData(e.target.value);
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   return (

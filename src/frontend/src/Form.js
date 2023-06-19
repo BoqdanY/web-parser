@@ -3,11 +3,16 @@ import formState from './form-state';
 import Radio from './Radio';
 import Fill from './Fill';
 
+const initialFormData = {
+  url: '',
+  element: '',
+  from: '',
+  to: '',
+  requestData: ''    
+}
+
 const Form = ({ setCode }) => {
-  const [formData, setFormData] = useState({
-    url: '',
-    element: '',    
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const [fields, setFields] = useState({
     url: '',
@@ -30,7 +35,7 @@ const Form = ({ setCode }) => {
       const response = await fetch('/parse', {
         method: 'GET',
         headers: {
-          'Parseurl': formData,
+          'Parseurl': formData.url,
         }
       });
       const data = await response.json();
@@ -42,7 +47,7 @@ const Form = ({ setCode }) => {
       }
       console.log(err);
     }
-    setFormData('');
+    setFormData(initialFormData);
   };
 
   return (
