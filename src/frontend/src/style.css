@@ -90,8 +90,8 @@ pre::-webkit-scrollbar {
 }
 
 pre::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: #415a77;}
+  background-color: #415a77;
+}
 
 pre::-webkit-scrollbar-thumb {
   background-color: #0d1b2a;
@@ -100,7 +100,6 @@ pre::-webkit-scrollbar-thumb {
 
 pre::-webkit-scrollbar-corner {
   background-color: #415a77;
-  border-radius: 10px;
 }
 
 .copy {
