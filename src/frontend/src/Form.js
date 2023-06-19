@@ -32,19 +32,18 @@ const Form = ({ setCode }) => {
     }
     setCode(formState.loading);
     try {
+      const bodyData = { parsingType, initialFormData };
       const response = await fetch('/parse', {
-        method: 'GET',
+        method: 'POST',
         headers: {
-          'Parseurl': formData.url,
-        }
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyData)
       });
       const data = await response.json();
-      if (response.ok) setCode(data.data);
-      else setCode(data.err);
+      setCode(response.ok ? data.data : data.err);
     } catch (err) {
-      if (err instanceof TypeError) {
-        setCode(err.name);
-      }
+      if (err instanceof TypeError) setCode(err.name);
       console.log(err);
     }
     setFormData(initialFormData);
