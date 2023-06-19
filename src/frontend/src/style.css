@@ -163,8 +163,3 @@ ul li {
 .mb-30 {
   margin-bottom: 30px;
 }
-
-.flex-block {
-  display: flex;
-  flex-direction: column;
-}
