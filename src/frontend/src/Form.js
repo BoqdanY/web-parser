@@ -32,7 +32,7 @@ const Form = ({ setCode }) => {
     }
     setCode(formState.loading);
     try {
-      const bodyData = { parsingType, initialFormData };
+      const bodyData = { parsingType, formData };
       const response = await fetch('/parse', {
         method: 'POST',
         headers: {
