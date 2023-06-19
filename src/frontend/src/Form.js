@@ -4,7 +4,15 @@ import Radio from './Radio';
 import Fill from './Fill';
 
 const Form = ({ setCode }) => {
-  const [formData, setFormData] = useState('');
+  const [formData, setFormData] = useState({
+    url: '',
+    element: '',    
+  });
+
+  const [fields, setFields] = useState({
+    url: '',
+    element: 'disabled'
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,8 +42,8 @@ const Form = ({ setCode }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Radio />
-      <Fill formData={formData} setFormData={setFormData} />
+      <Radio fields={fields} setFields={setFields} />
+      <Fill formData={formData} setFormData={setFormData} fields={fields} />
     </form>
   );
 };
