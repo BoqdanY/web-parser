@@ -30,26 +30,20 @@ const Form = ({ setCode }) => {
     requestData: 'disabled'
   });
 
-  const validateData = (data, dataTypes) => {
+  const validateData = (data, dataTypes, fieldsState) => {
     for (const [key, value] of Object.entries(data.formData)) {
+      if (fieldsState[key] === 'disabled') continue;
       if (value === '') {
         setCode(`Fill ${key} input`);
         return false;
       }
-    }
-    for (const [key, value] of Object.entries(dataTypes)) {
-      if (value === 'number') {
-        console.log('here');
-        const parsedNumber = Number(data.formData[key]);
-        console.log(parsedNumber);
+      if (dataTypes[key] === 'number') {
+        const parsedNumber = Number(value);
         if (!isNaN(parsedNumber)) continue;
         else {
           setCode(`${key} input must be a number`);
           return false;
-        };
-      } else {
-        if (typeof data.formData[key] === value) continue;
-        else return false;
+        }
       }
     }
     return true;
@@ -64,7 +58,7 @@ const Form = ({ setCode }) => {
     setCode(formState.loading);
     try {
       const bodyData = { parsingType, formData };
-      if (!validateData(bodyData, formDataTypes)) {
+      if (!validateData(bodyData, formDataTypes, fieldsState)) {
         console.log('ok');
         return;
       }
