@@ -22,7 +22,7 @@ const formDataTypes = {
 const Form = ({ setCode }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [parsingType, setParsingType] = useState('');
-  const [fields, setFields] = useState({
+  const [fieldsState, setFieldsState] = useState({
     url: '',
     element: 'disabled',
     from: 'disabled',
@@ -86,8 +86,8 @@ const Form = ({ setCode }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Radio fields={fields} setFields={setFields} parsingType={parsingType} setParsingType={setParsingType} />
-      <Fill formData={formData} setFormData={setFormData} fields={fields} />
+      <Radio fieldsState={fieldsState} setFieldsState={setFieldsState} parsingType={parsingType} setParsingType={setParsingType} />
+      <Fill formData={formData} setFormData={setFormData} fields={fieldsState} />
     </form>
   );
 };

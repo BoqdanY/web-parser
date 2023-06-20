@@ -1,19 +1,19 @@
 import React from "react";
 
-const fieldsState = {
+const activeFieldsForParsingType = {
   gHTML: ['url'],
   static: ['url', 'element'],
   dynamicPages: ['url', 'element', 'from', 'to'],
   dynamicData: ['url', 'element', 'from', 'to', 'requestData']
 };
 
-const Radio = ({ fields, setFields, parsingType, setParsingType }) => {
+const Radio = ({ fieldsState, setFieldsState, parsingType, setParsingType }) => {
   const handleRadioChange = (e) => {
     setParsingType(e.target.value);
     const newFields = {};
-    Object.keys(fields).forEach(key => newFields[key] = 'disabled');
-    fieldsState[e.target.value].forEach(key => newFields[key] = '');
-    setFields(newFields);
+    Object.keys(fieldsState).forEach(key => newFields[key] = 'disabled');
+    activeFieldsForParsingType[e.target.value].forEach(key => newFields[key] = '');
+    setFieldsState(newFields);
   }
 
   return (
