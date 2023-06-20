@@ -21,7 +21,7 @@ const Radio = ({ fields, setFields, parsingType, setParsingType }) => {
       <h3>Choose type of parsing</h3>
       <div className='radio-container'>
         <div className='radio-child'>
-          <input type="radio" id="parsingChoise1" name="parsing" value="gHTML" onChange={handleRadioChange} checked={parsingType === 'gHTML'} />
+          <input type="radio" id="parsingChoise1" name="parsing" value="gHTML" onChange={handleRadioChange} checked={parsingType === '' || parsingType === 'gHTML'} />
           <label htmlFor="parsingChoise1">Get HTML only</label>
         </div>
         <div className='radio-child'>
