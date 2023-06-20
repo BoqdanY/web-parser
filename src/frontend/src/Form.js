@@ -19,25 +19,27 @@ const formDataTypes = {
   requestData: 'string'
 };
 
+const initFieldsState = {
+  url: '',
+  element: 'disabled',
+  from: 'disabled',
+  to: 'disabled',
+  requestData: 'disabled'
+};
+
 const Form = ({ setCode }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [parsingType, setParsingType] = useState('');
-  const [fieldsState, setFieldsState] = useState({
-    url: '',
-    element: 'disabled',
-    from: 'disabled',
-    to: 'disabled',
-    requestData: 'disabled'
-  });
+  const [fieldsState, setFieldsState] = useState(initFieldsState);
 
-  const validateData = (data, dataTypes, fieldsState) => {
+  const validateData = (data) => {
     for (const [key, value] of Object.entries(data.formData)) {
       if (fieldsState[key] === 'disabled') continue;
       if (value === '') {
         setCode(`Fill ${key} input`);
         return false;
       }
-      if (dataTypes[key] === 'number') {
+      if (formDataTypes[key] === 'number') {
         const parsedNumber = Number(value);
         if (!isNaN(parsedNumber)) continue;
         else {
@@ -49,17 +51,11 @@ const Form = ({ setCode }) => {
     return true;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData) {
-      setCode(formState.errEmpty);
-      return;
-    }
+  const getAndSetCode = async () => {
     setCode(formState.loading);
     try {
       const bodyData = { parsingType, formData };
       if (!validateData(bodyData, formDataTypes, fieldsState)) {
-        console.log('ok');
         return;
       }
       const response = await fetch('/parse', {
@@ -73,9 +69,13 @@ const Form = ({ setCode }) => {
       setCode(response.ok ? data.data : data.err);
     } catch (err) {
       if (err instanceof TypeError) setCode(err.name);
-      console.log(err);
     }
     setFormData(initialFormData);
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    getAndSetCode();
   };
 
   return (
