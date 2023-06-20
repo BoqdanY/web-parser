@@ -36,14 +36,14 @@ const Form = ({ setCode }) => {
     for (const [key, value] of Object.entries(data.formData)) {
       if (fieldsState[key] === 'disabled') continue;
       if (value === '') {
-        setCode(`Fill ${key} input`);
+        setCode(formState.errEmpty(key));
         return false;
       }
       if (formDataTypes[key] === 'number') {
         const parsedNumber = Number(value);
         if (!isNaN(parsedNumber)) continue;
         else {
-          setCode(`${key} input must be a number`);
+          setCode(formState.errNaN(key));
           return false;
         }
       }
