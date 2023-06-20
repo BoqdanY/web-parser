@@ -1,5 +1,5 @@
-import Form from "./Form";
-import CodeDisplay from "./CodeDisplay";
+import Form from "./form/Form";
+import CodeDisplay from "./code/CodeDisplay";
 
 const MainPage = ({ code, setCode }) => {
   return (

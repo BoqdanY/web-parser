@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
-import formState from './form-state';
+import formState from '../form/form-state';
 
 const CodeDisplay = ({ code, setCode }) => {
   const copyCode = () => {
