@@ -2,30 +2,8 @@ import React, { useState } from 'react';
 import formState from './form-state';
 import Radio from './Radio';
 import Fill from './Fill';
-
-const initialFormData = {
-  url: '',
-  element: '',
-  from: '',
-  to: '',
-  requestData: ''    
-};
-
-const formDataTypes = {
-  url: 'string',
-  element: 'string',
-  from: 'number',
-  to: 'number',
-  requestData: 'string'
-};
-
-const initFieldsState = {
-  url: '',
-  element: 'disabled',
-  from: 'disabled',
-  to: 'disabled',
-  requestData: 'disabled'
-};
+import { initFieldsState, initialFormData  } from './initialObjects/initialObjects';
+import { formDataTypes } from './formTypes/formDataTypes';
 
 const Form = ({ setCode }) => {
   const [formData, setFormData] = useState(initialFormData);
