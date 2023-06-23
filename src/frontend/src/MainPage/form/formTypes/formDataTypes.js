@@ -3,5 +3,5 @@ export const formDataTypes = {
   element: 'string',
   from: 'number',
   to: 'number',
-  requestData: 'string'
+  GETParams: 'string'
 };

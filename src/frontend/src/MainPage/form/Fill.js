@@ -16,7 +16,7 @@ const Fill = ({ formData, setFormData, fields }) => {
         <input type="text" name="from" value={formData.from} onChange={handleChange} placeholder='from e.g 10' className={`${fields.from}`} />
         <input type="text" name="to" value={formData.to} onChange={handleChange} placeholder='to e.g 20' className={`${fields.to}`} />
       </div>
-      <div><input type="text" name="requestData" value={formData.requestData} onChange={handleChange} placeholder='request data...' className={`${fields.requestData}`} /></div>
+      <div><input type="text" name="requestData" value={formData.GETParams} onChange={handleChange} placeholder='GET params...' className={`${fields.GETParams}`} /></div>
       <button type="submit">Get Page Html</button>
     </>
   );

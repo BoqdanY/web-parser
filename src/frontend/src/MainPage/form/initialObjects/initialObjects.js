@@ -3,7 +3,7 @@ export const initFieldsState = {
   element: 'disabled',
   from: 'disabled',
   to: 'disabled',
-  requestData: 'disabled'
+  GETParams: 'disabled'
 };
 
 export const initialFormData = {
@@ -11,5 +11,5 @@ export const initialFormData = {
   element: '',
   from: '',
   to: '',
-  requestData: ''    
+  GETParams: ''    
 };
