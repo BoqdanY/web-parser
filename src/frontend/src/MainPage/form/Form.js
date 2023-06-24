@@ -17,14 +17,6 @@ const Form = ({ setCode }) => {
         setCode(formState.errEmpty(key));
         return false;
       }
-      if (formDataTypes[key] === 'number') {
-        const parsedNumber = Number(value);
-        if (!isNaN(parsedNumber)) continue;
-        else {
-          setCode(formState.errNaN(key));
-          return false;
-        }
-      }
     }
     return true;
   };

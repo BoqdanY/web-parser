@@ -1,6 +1,6 @@
 export const formDataTypes = {
   url: 'string',
   element: 'string',
-  range: 'string',
-  tagName: 'string'
+  tagName: 'string',
+  range: 'string'
 };
