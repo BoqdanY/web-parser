@@ -16,7 +16,7 @@ export default (request, response) => {
         await fs.promises.writeFile('data.txt', data);
       } catch (err) {
         response.writeHead(400);
-        response.end(JSON.stringify({ err: 'Invalid url' }));
+        response.end(JSON.stringify({ err: err.message }));
         console.log(err);
       }
     });
