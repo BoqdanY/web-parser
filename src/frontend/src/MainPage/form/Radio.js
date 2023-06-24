@@ -26,10 +26,6 @@ const Radio = ({ fieldsState, setFieldsState, parsingType, setParsingType }) => 
           <input type="radio" id="parsingChoise3" name="parsing" value="dynamicPages" onChange={handleRadioChange} checked={parsingType === 'dynamicPages'} />
           <label htmlFor="parsingChoise3">Get data by dynamic page <span className="eg-span">(getting page)</span></label>
         </div>
-        <div className='radio-child'>
-          <input type="radio" id="parsingChoise4" name="parsing" value="dynamicData" onChange={handleRadioChange} checked={parsingType === 'dynamicData'} />
-          <label htmlFor="parsingChoise4">Get data by dynamic page <span className="eg-span">(getting data)</span></label>
-        </div>
       </div>
     </>
   );
